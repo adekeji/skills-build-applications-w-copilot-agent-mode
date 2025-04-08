@@ -3,6 +3,7 @@ INSTALLED_APPS += [
     'octofit_tracker_app',
     'rest_framework',
     'corsheaders',
+    'octofit_tracker',
 ]
 
 # Add CORS headers middleware

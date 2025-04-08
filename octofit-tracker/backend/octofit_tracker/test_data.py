@@ -1,38 +1,37 @@
-# Test data for OctoFit Tracker
+from bson import ObjectId
+from datetime import timedelta
 
-test_users = [
-    {"username": "thundergod", "email": "thundergod@mhigh.edu", "password": "thundergodpassword"},
-    {"username": "metalgeek", "email": "metalgeek@mhigh.edu", "password": "metalgeekpassword"},
-    {"username": "zerocool", "email": "zerocool@mhigh.edu", "password": "zerocoolpassword"},
-    {"username": "crashoverride", "email": "crashoverride@hmhigh.edu", "password": "crashoverridepassword"},
-    {"username": "sleeptoken", "email": "sleeptoken@mhigh.edu", "password": "sleeptokenpassword"},
-]
-
-test_teams = [
-    {"name": "Blue Team"},
-    {"name": "Gold Team"},
-]
-
-test_activities = [
-    {"username": "thundergod", "activity_type": "Cycling", "duration": "1:00:00"},
-    {"username": "metalgeek", "activity_type": "Crossfit", "duration": "2:00:00"},
-    {"username": "zerocool", "activity_type": "Running", "duration": "1:30:00"},
-    {"username": "crashoverride", "activity_type": "Strength", "duration": "0:30:00"},
-    {"username": "sleeptoken", "activity_type": "Swimming", "duration": "1:15:00"},
-]
-
-test_leaderboard = [
-    {"username": "thundergod", "score": 100},
-    {"username": "metalgeek", "score": 90},
-    {"username": "zerocool", "score": 95},
-    {"username": "crashoverride", "score": 85},
-    {"username": "sleeptoken", "score": 80},
-]
-
-test_workouts = [
-    {"name": "Cycling Training", "description": "Training for a road cycling event"},
-    {"name": "Crossfit", "description": "Training for a crossfit competition"},
-    {"name": "Running Training", "description": "Training for a marathon"},
-    {"name": "Strength Training", "description": "Training for strength"},
-    {"name": "Swimming Training", "description": "Training for a swimming competition"},
-]
+test_data = {
+    "users": [
+        {"_id": ObjectId(), "username": "thundergod", "email": "thundergod@mhigh.edu", "password": "thundergodpassword"},
+        {"_id": ObjectId(), "username": "metalgeek", "email": "metalgeek@mhigh.edu", "password": "metalgeekpassword"},
+        {"_id": ObjectId(), "username": "zerocool", "email": "zerocool@mhigh.edu", "password": "zerocoolpassword"},
+        {"_id": ObjectId(), "username": "crashoverride", "email": "crashoverride@hmhigh.edu", "password": "crashoverridepassword"},
+        {"_id": ObjectId(), "username": "sleeptoken", "email": "sleeptoken@mhigh.edu", "password": "sleeptokenpassword"},
+    ],
+    "teams": [
+        {"_id": ObjectId(), "name": "Blue Team"},
+        {"_id": ObjectId(), "name": "Gold Team"},
+    ],
+    "activities": [
+        {"_id": ObjectId(), "user": "thundergod", "activity_type": "Cycling", "duration": timedelta(hours=1)},
+        {"_id": ObjectId(), "user": "metalgeek", "activity_type": "Crossfit", "duration": timedelta(hours=2)},
+        {"_id": ObjectId(), "user": "zerocool", "activity_type": "Running", "duration": timedelta(hours=1, minutes=30)},
+        {"_id": ObjectId(), "user": "crashoverride", "activity_type": "Strength", "duration": timedelta(minutes=30)},
+        {"_id": ObjectId(), "user": "sleeptoken", "activity_type": "Swimming", "duration": timedelta(hours=1, minutes=15)},
+    ],
+    "leaderboard": [
+        {"_id": ObjectId(), "user": "thundergod", "score": 100},
+        {"_id": ObjectId(), "user": "metalgeek", "score": 90},
+        {"_id": ObjectId(), "user": "zerocool", "score": 95},
+        {"_id": ObjectId(), "user": "crashoverride", "score": 85},
+        {"_id": ObjectId(), "user": "sleeptoken", "score": 80},
+    ],
+    "workouts": [
+        {"_id": ObjectId(), "name": "Cycling Training", "description": "Training for a road cycling event"},
+        {"_id": ObjectId(), "name": "Crossfit", "description": "Training for a crossfit competition"},
+        {"_id": ObjectId(), "name": "Running Training", "description": "Training for a marathon"},
+        {"_id": ObjectId(), "name": "Strength Training", "description": "Training for strength"},
+        {"_id": ObjectId(), "name": "Swimming Training", "description": "Training for a swimming competition"},
+    ],
+}
