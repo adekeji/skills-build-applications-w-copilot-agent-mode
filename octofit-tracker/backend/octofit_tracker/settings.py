@@ -1,6 +1,9 @@
 # Add localhost and 127.0.0.1 to allowed hosts
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
+# Add codespace URL to allowed hosts
+ALLOWED_HOSTS.append('[REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]-8000.app.github.dev')
+
 # Ensure INSTALLED_APPS is initialized
 INSTALLED_APPS = [
     "django.contrib.admin",
