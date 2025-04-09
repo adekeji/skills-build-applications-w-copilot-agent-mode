@@ -1,80 +1,80 @@
 /* General styles */
 body {
+  font-family: 'Roboto', sans-serif;
   background-color: #f0f8ff; /* Light blue background */
-  color: #333; /* Dark text color */
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Navigation menu */
-.navbar {
-  background-color: #007bff; /* Blue background */
-  color: white;
+.App {
+  text-align: center;
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
+/* Navigation styles */
+nav {
+  background-color: #4682b4; /* Steel blue */
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar a:hover {
-  color: #ffdd57; /* Yellow on hover */
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  color: #007bff; /* Blue headings */
-}
-
-/* Buttons */
-button, .btn {
-  background-color: #007bff; /* Blue buttons */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover, .btn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-
-/* Tables */
+/* Table styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
+  margin: 1rem 0;
+  background-color: #ffffff; /* White background */
+  color: #333333; /* Dark text */
 }
 
 table th, table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+  border: 1px solid #dddddd;
+  padding: 0.5rem;
+  text-align: left;
 }
 
 table th {
-  background-color: #007bff; /* Blue table headers */
-  color: white;
+  background-color: #4682b4; /* Steel blue */
+  color: #ffffff; /* White text */
 }
 
-/* Links */
+/* Button styles */
+button {
+  background-color: #4682b4; /* Steel blue */
+  color: #ffffff; /* White text */
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #5a9bd4; /* Lighter blue */
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  color: #4682b4; /* Steel blue */
+}
+
+/* Link styles */
 a {
-  color: #007bff;
+  color: #4682b4; /* Steel blue */
   text-decoration: none;
 }
 
 a:hover {
-  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline;
 }
 
-/* Logo */
+/* Logo styles */
 .logo {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
 }
 
 .logo img {
   height: 50px;
-  margin-right: 10px;
+  margin-right: 1rem;
 }

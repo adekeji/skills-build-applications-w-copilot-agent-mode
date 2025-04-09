@@ -3,16 +3,12 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
 from .models import User, Team, Activity, Leaderboard, Workout
+from django.http import JsonResponse
 
-@api_view(['GET'])
-def api_root(request, format=None):
-    codespace_url = "https://didactic-space-carnival-x9g6xx9rg4jcv4qw-8000.app.github.dev"
-    return Response({
-        'users': f'{codespace_url}/api/users/',
-        'teams': f'{codespace_url}/api/teams/',
-        'activities': f'{codespace_url}/api/activities/',
-        'leaderboard': f'{codespace_url}/api/leaderboard/',
-        'workouts': f'{codespace_url}/api/workouts/'
+def api_root(request):
+    return JsonResponse({
+        "message": "Welcome to the Octofit API!",
+        "url": "https://[REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]-8000.app.github.dev"
     })
 
 class UserViewSet(viewsets.ModelViewSet):

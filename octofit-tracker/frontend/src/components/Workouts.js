@@ -1,31 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Workouts() {
+  const [workouts, setWorkouts] = useState([]);
+
+  useEffect(() => {
+    fetch('https://[REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]-8000.app.github.dev/api/workouts')
+      .then(response => response.json())
+      .then(data => setWorkouts(data));
+  }, []);
+
   return (
-    <div className="card">
-      <div className="card-header">
-        <h2 className="card-title">Workouts</h2>
-      </div>
-      <div className="card-body">
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Workout</th>
-              <th>Description</th>
+    <div className="container mt-4">
+      <h1 className="text-center">Workouts</h1>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {workouts.map(workout => (
+            <tr key={workout.id}>
+              <td>{workout.id}</td>
+              <td>{workout.name}</td>
             </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Running</td>
-              <td>5km run in the park</td>
-            </tr>
-            <tr>
-              <td>Swimming</td>
-              <td>30 laps in the pool</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

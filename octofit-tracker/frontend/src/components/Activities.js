@@ -1,34 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Activities() {
+  const [activities, setActivities] = useState([]);
+
+  useEffect(() => {
+    fetch('https://[REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]-8000.app.github.dev/api/activities')
+      .then(response => response.json())
+      .then(data => setActivities(data));
+  }, []);
+
   return (
-    <div className="card">
-      <div className="card-header">
-        <h2 className="card-title">Activities</h2>
-      </div>
-      <div className="card-body">
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Activity</th>
-              <th>Duration</th>
-              <th>Date</th>
+    <div className="container mt-4">
+      <h1 className="text-center">Activities</h1>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {activities.map(activity => (
+            <tr key={activity.id}>
+              <td>{activity.id}</td>
+              <td>{activity.name}</td>
             </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Running</td>
-              <td>30 mins</td>
-              <td>2025-04-08</td>
-            </tr>
-            <tr>
-              <td>Swimming</td>
-              <td>45 mins</td>
-              <td>2025-04-07</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

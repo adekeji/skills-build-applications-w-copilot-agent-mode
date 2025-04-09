@@ -1,5 +1,5 @@
 # Add localhost and 127.0.0.1 to allowed hosts
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Add codespace URL to allowed hosts
 ALLOWED_HOSTS.append('[REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]-8000.app.github.dev')
@@ -21,6 +21,9 @@ INSTALLED_APPS += [
     'corsheaders',
     'octofit_tracker',
 ]
+
+# Add the octofit_tracker_app to the installed apps
+INSTALLED_APPS.append('octofit_tracker_app')
 
 # Ensure MIDDLEWARE is initialized
 MIDDLEWARE = [
