@@ -1,4 +1,5 @@
-Django==4.1
+# Backend dependencies
+Django>=3.2,<4.0
 djangorestframework==3.14.0
 django-allauth==0.51.0
 django-cors-headers==4.5.0
