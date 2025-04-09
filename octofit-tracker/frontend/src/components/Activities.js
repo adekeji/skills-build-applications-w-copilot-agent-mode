@@ -5,7 +5,7 @@ function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch('https://[REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]-8000.app.github.dev/api/activities')
+    fetch('https://super-duper-zebra-q95r669vgpr39jxj-8000.app.github.dev/api/activities')
       .then(response => response.json())
       .then(data => setActivities(data));
   }, []);
