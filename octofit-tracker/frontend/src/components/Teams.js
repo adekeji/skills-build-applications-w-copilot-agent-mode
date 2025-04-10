@@ -5,7 +5,7 @@ function Teams() {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    fetch('https://super-duper-zebra-q95r669vgpr39jxj-8000.app.github.dev/api/teams')
+    fetch('https://super-duper-zebra-q95r669vgpr39jxj-8000.app.github.dev/api/teams/')
       .then(response => response.json())
       .then(data => setTeams(data));
   }, []);

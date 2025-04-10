@@ -5,7 +5,7 @@ function Workouts() {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch('https://super-duper-zebra-q95r669vgpr39jxj-8000.app.github.dev/api/workouts')
+    fetch('https://super-duper-zebra-q95r669vgpr39jxj-8000.app.github.dev/api/workouts/')
       .then(response => response.json())
       .then(data => setWorkouts(data));
   }, []);
